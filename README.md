@@ -72,6 +72,17 @@ Because Cypress is asynchronous, and has been built to resolve promises to make 
 
 In other automation tools, print statement will print the result in the console/terminal of the editor. But because cypress works directly on the browser (without any json, or external APIs), it prints to the browser console.
 
+Cypress provides a method called **check**  specific for checkboxes and radio buttons. This is more reliable than click().
+
+Assertions can be concatenated by using **.and** . Assertion for a property is **have** and for behavior is **be**
+
+
+Multiple checkboxes can be checked by including the values of the elements in the check method
+
+Static dropdowns have fixed values while dynamic dropdowns display suggestions based the user's input.
+## STATIC DROPDOWNS
+- Static dropdowns always have **select** as the tagname
+- For static dropdowns, cypress has a method called select which can take either the name of the element or the value of the element.
 
 
 
