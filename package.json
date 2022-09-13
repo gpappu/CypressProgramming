@@ -8,7 +8,7 @@
     "headmode": "alltests -- --headed", 
     "specifictest": "alltests -- --spec 'cypress/integration/examples/newFramework.js'", 
     "edge": "specifictest -- --browser 'edge'",
-    "recordtest": "node_modules//.bin//cypress run --record --k dab56c05-0190-48ff-8a98-64d8e257670f "
+    "recordtest": "node_modules//.bin//cypress run --record --key dab56c05-0190-48ff-8a98-64d8e257670f "
 
   },
   "author": "",
