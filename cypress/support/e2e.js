@@ -18,3 +18,13 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+module.exports = (on, config) => {
+
+ on("before:browser:launch", (browser, launchOptions) => {
+ console.log(launchOptions.args);
+ if (browser.name === "chrome") {
+   launchOptions.args.push("--incognito");
+ }
+ return launchOptions;
+});
+};

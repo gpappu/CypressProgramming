@@ -31,6 +31,7 @@ describe('My First Test Suite', function () {
             }
 
         })
+        
 
         // If non Cypress code is introduced, user would have to resolve the promise manually by including the method called then().Example code is below:
         // To print the text of the logo
