@@ -7,7 +7,9 @@
     "test": "node_modules//.bin//cypress run",
     "headmode": "npm run test -- --headed", 
     "specifictest": "npm run test -- --spec 'cypress/integration/examples/newFramework.js'", 
-    "chrome": "npm run specifictest -- --browser 'chrome'"
+    "chrome": "npm run specifictest -- --browser 'chrome'",
+    "recordtest": "test -- --recorded --k dab56c05-0190-48ff-8a98-64d8e257670f "
+
   },
   "author": "",
   "license": "ISC",
