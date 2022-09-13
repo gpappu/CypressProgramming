@@ -237,6 +237,13 @@ If investing in Cypress Dashboard is not a possibility, then there is an alterna
 5. You will have to log into Jenkins for the first time and install recommended plugins.
 6. Create a new project by clicking on new item. Give the project a name and set it to be a freestyle project.
 7. The code can be retrieved from github using the URL of the repository. **Ensure the repository is publicly visible.**
+8. Set the branch to the branch where the code is in the **branch specifier** section. 
+9. For Jenkins to use the script commands used in the `package.json` file, check the `This promect is parameterized`, in the **general section**,  give it a name (scripts), and add the name of scripts in the **choices** section. 
+10. Navigate to the Build Steps section and add a build step.
+11. Select **Execute Windows batch command** on windows or **Execute shell** on mac. 
+12. Enter the command `npm run "%scripts%" on windows or  `npm run "$scripts"` on mac 
+13. Save the project.
+14. Click on the **Build with parameters** link, select the test you would like to run from the dropdown and build the project.
 
 
 
