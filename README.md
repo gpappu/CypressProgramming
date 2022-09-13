@@ -230,10 +230,13 @@ If investing in Cypress Dashboard is not a possibility, then there is an alterna
 5. Even though cypress retries the test n times, the log will show it as one test but each time the test is executed, a new set of screenshots will be generated. 
 
 ## Continuous Integration with Jenkins
-1. Download Generic jenkins.war file 
-2. In the terminal or command prompt, navigate to the directory where jenksns.war is located 
-3. Type the command `java -jenkins.war -httpport=9090`
+1. Download Generic jenkins.war file  or the Jenkins windows installer for Windows.
+2. In the command prompt, navigate to the directory where jenksns.war is located 
+3. Type the command `java -jenkins.war -httpport=9090` **Java should be installed and the accepted version is 11 or 17.**
 4. Jenkins will start in the local server in the port 9090.
+5. You will have to log into Jenkins for the first time and install recommended plugins.
+6. Create a new project by clicking on new item. Give the project a name and set it to be a freestyle project.
+7. The code can be retrieved from github using the URL of the repository. **Ensure the repository is publicly visible.**
 
 
 
