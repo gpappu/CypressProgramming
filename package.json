@@ -3,18 +3,25 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
+  "scripts": 
+  {
     "alltests": "node_modules//.bin//cypress run",
-    "headmode": "alltests -- --headed", 
-    "specifictest": "alltests -- --spec 'cypress/integration/examples/newFramework.js'", 
+    "headmode": "alltests -- --headed",
+    "specifictest": "alltests -- --spec 'cypress/integration/examples/newFramework.js'",
     "edge": "specifictest -- --browser 'edge'",
-    "recordtest": "node_modules//.bin//cypress run --record --key dab56c05-0190-48ff-8a98-64d8e257670f "
-
+    "recordtest": "node_modules//.bin//cypress run --record --key dab56c05-0190-48ff-8a98-64d8e257670f"
+  },
+  "cypress-cucumber-preprocessor": 
+  {
+    "nonGlobalStepDefinitions": true, 
+    "step_definitions": "cypress\\integration\\examples\\BDD\\ecommerce\\ecommerceStepDef.js"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "cypress": "^10.3.1",
+  "devDependencies": 
+  {
+    "cypress": "^10.8.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-iframe": "^1.0.1",
     "mocha": "^10.0.0",
     "mochawesome": "^7.1.3"

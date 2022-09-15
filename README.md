@@ -245,6 +245,32 @@ If investing in Cypress Dashboard is not a possibility, then there is an alterna
 13. Save the project.
 14. Click on the **Build with parameters** link, select the test you would like to run from the dropdown and build the project.
 
+## Behavioral Driven Drvelopment (BDD) Framework - Cucumber
+1. BDD framework i.e. Behavior Driven Development is a software development approach that allows the tester/business analyst to create test cases in simple text language (English).
+The simple language used in the scenarios helps even non-technical team members to understand what is going on in the software project. This helps and improves communication among technical and non-technical teams, managers, and stakeholders.
+2. Cucumber uses Gherkin syntax.
+**Gherkin is a line-oriented language that uses indentation to define structure.Either spaces or tabs may be used for indentation. One line should be treated as one step and mostly it starts with a keyword. a line that starts with a hash sign (#) is treated as comment.Steps are defined with Given-When-Then statements**
+3. Basically, we are creating a front end interface so technical and non-technical folks what the code is doing. We link each cucumber statement to statemrnts in our code.
+4. To install cucumber, google for **npm cucumber cypress preprocessor**. From the official website, use the command `npm install --save-dev cypress-cucumber-preprocessor`. This will add cucumber dependencies to the package.json file.
+7. In the config.js file, add the command ` on('file:preprocessor', cucumber()` in the SetupNodeEvents section. This will add the cucumber plugin to the project.
+8. Add the command `const cucumber = require('cypress-cucumber-preprocessor').default` to the top of the config.js file to import cucumber.
+9. Add the command
+`"cypress-cucumber-preprocessor": {
+  "nonGlobalStepDefinitions": true
+}` to package.json file
+10. The file where we write test scenarios in cucumber is called the feature file with extension .feature
+11. Create a new folder under examples for all BDD tests and update specpattern in the config.js file to execute all tests in the new BDD folder.
+12. To write all tests in the .feature folder, visual studio has a Gherkin extension that can be downloaded so vscode can provide the syntax for the cucumber statements.
+13. A feature file is like a test suite. It can multiple test cases.
+14. Once you write out your scenarios in the .feature file, create another sub folder in the same folder with the same name as the feature folder because when you run the feature folder, cypress will look for the stepdefinition folder with the same name.
+15. The step definition folder has the actual implmentation (code) written for the scenario. 
+16. In the step definition folder,create a new file with .js extension and define each of the Gherkin statements in the feature file and import the Given, When, Then modules from the cypress-cucumber-preprocessor
+17. If the test is using hooks (before, beforeEach, etc), those can be placed in the step definition but it is recommended to use a separate file within the **ecommerce** folder for them.
+18. Cucumber supports mocha related hooks. Cucumber does not provide test hooks.
+
+
+
+
 
 
 

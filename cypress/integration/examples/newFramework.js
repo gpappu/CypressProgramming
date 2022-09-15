@@ -3,7 +3,7 @@
 import HomePage from '../pageobjects/homepage'
 import ProductPage from '../pageobjects/ProductPage'
 import checkoutPage from '../pageobjects/checkoutPage'
-//import purchasePage from '../pageobjects/purchasePage'
+import purchasePage from '../pageobjects/purchasePage'
 
 // This will import the page objects from the javascript class
 
@@ -15,7 +15,8 @@ describe('NewFramework', function () {
 
     })
 
-    this.beforeEach(() => {
+    beforeEach(() => 
+    {
         cy.fixture('example').then(function (testdata) {
             this.data = testdata
 
@@ -27,7 +28,7 @@ describe('NewFramework', function () {
         const homepage = new HomePage()
         const shopproducts = new ProductPage()
         const checkout = new checkoutPage()
-        //const purchasebutton = new purchasePage()
+        const purchasebutton = new purchasePage()
 
         cy.visit(Cypress.env('url'))
         homepage.getName().type(this.data.name)
@@ -56,11 +57,10 @@ describe('NewFramework', function () {
 
         })
 
-        cy.get('tr td:nth-child(5) h3').then(function(el) 
+       checkout.getTotal().then(function(el) 
         {
             const totalText = el.text().split(" ")
             var totalValue = Number(totalText[1].trim())
-            cy.log(totalValue)
             expect(sum).to.equal(totalValue)
             
         })           
@@ -68,19 +68,20 @@ describe('NewFramework', function () {
       
         checkout.clickCheckOut().click()
 
-        cy.get('#country').type("India")
+        purchasebutton.inputCountry().type("India")
         Cypress.config('defaultCommandTimeout', 10000)
-        cy.get('.suggestions ul li a').each((el, index, $list) => {
+        purchasebutton.selectCountry().each((el, index, $list) => 
+        {
             if (el.text() == "India") {
-                cy.get('.suggestions > ul > li > a').click()
+                purchasebutton.selectCountry().click()
             }
         })
-        cy.get('#checkbox2').click({force: true})
-        cy.get('.btn.btn-success.btn-lg').click()
+        purchasebutton.agreeCheckbox().click({force: true})
+        purchasebutton.clickPurchase().click()
         //cy.get('.alert').should('have.text', 'Success! Thank you! Your order will be delivered in next few weeks')
         // the above statement fails because when cypress grabs the text, it includes some additional characters which fail the test.
         // The alternate statement is 
-        cy.get('.alert').then(function(element)
+        purchasebutton.validateAlert().then(function(element)
         {
             expect(element.text().includes('Success! Thank you! Your order will be delivered in next few weeks')).to.be.true
         })
