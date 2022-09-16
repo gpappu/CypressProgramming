@@ -8,7 +8,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber())
     },
-    specPattern: 'cypress/integration/examples/BDD/*.feature',
+    specPattern: 'cypress/integration/examples/cucumberTests/*.feature',
     watchForFileChanges: false,
     defaultCommandTimeout: 6000,
     env:
