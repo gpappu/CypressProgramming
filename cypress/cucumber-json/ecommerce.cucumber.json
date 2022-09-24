@@ -1,0 +1,144 @@
+[
+  {
+    "description": "    go to url, fill the form, add the products to cart, checkout, select country, and validae success message.",
+    "keyword": "Feature",
+    "name": "end to end ecommerce validation",
+    "line": 1,
+    "id": "end-to-end-ecommerce-validation",
+    "tags": [],
+    "uri": "ecommerce.feature",
+    "elements": [
+      {
+        "id": "end-to-end-ecommerce-validation;ecommerce-product-delivery",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "ecommerce product delivery",
+        "tags": [
+          {
+            "name": "@Regression",
+            "line": 5
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I open ecommerce page and fill the form",
+            "result": {
+              "status": "passed",
+              "duration": 5405000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "products are added to the cart",
+            "result": {
+              "status": "passed",
+              "duration": 1253000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "checkout and validate total",
+            "result": {
+              "status": "passed",
+              "duration": 300000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I select country and validate success message",
+            "result": {
+              "status": "passed",
+              "duration": 5738000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "end-to-end-ecommerce-validation;navigate-to-the-shop-cart-page",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Navigate to the shop cart page",
+        "tags": [
+          {
+            "name": "@Smoke",
+            "line": 12
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "I open ecommerce page",
+            "result": {
+              "status": "passed",
+              "duration": 1212000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "name",
+                      "email",
+                      "password",
+                      "gender"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "John Andrew",
+                      "john.andrew@gmail.com",
+                      "Test1234",
+                      "Male"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I fill the form",
+            "result": {
+              "status": "passed",
+              "duration": 1352000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "validate two way binding",
+            "result": {
+              "status": "passed",
+              "duration": 59000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "navigate to product page",
+            "result": {
+              "status": "passed",
+              "duration": 747000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -268,6 +268,16 @@ The simple language used in the scenarios helps even non-technical team members 
 17. If the test is using hooks (before, beforeEach, etc), those can be placed in the step definition but it is recommended to use a separate file within the **ecommerce** folder for them.
 18. Cucumber supports mocha related hooks. Cucumber does not provide test hooks.
 
+## Cucumber HTML Reports
+1. Follow the instructions in the website "https://www.npmjs.com/package/cypress-cucumber-preprocessor" under Output.
+2. For cucumber to create html reports, a json file has to be created which will be the input to the html report js file.
+3. Firstly, add the `cypress json` configuration in the package.json file.
+4. Next. install the cucumber reporter html plug-in by using this command   npm install multiple-cucumber-html-reporter --save-dev`.
+5. Next, create a new .js file at the project level and copy the content in this webpage "npm install multiple-cucumber-html-reporter --save-dev". 
+6. Modify  the above .js file to include the path to the json file and the path where the report should be created.  use a specific browser with specific version, and all other properties.
+7. Because this .js file is in the project level, use the command `node <.js file name>` to run the file.
+9. This will create the html file in the folder provided which can be copied and rendered on the browser.
+
 
 
 
